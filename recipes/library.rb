@@ -8,7 +8,7 @@
 #
 
 chef_gem 'gpgme' do
-  action :nothing
-end.run_action(:install)
+  action :install
+end
 
 require 'gpgme'

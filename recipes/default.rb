@@ -28,7 +28,8 @@ directory gpg_home do
   action :nothing
 end.run_action(:create)
 
-search(node[:gpg][:keys_data_bag]) do |key|
+data_bag('gpg_keys').each do |key_id|
+  key = data_bag_item('gpg_keys', key_id)
 
   # Import the key:
 
